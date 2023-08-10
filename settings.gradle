@@ -1,0 +1,3 @@
+rootProject.name = 'resource-access-solution'
+
+include 'resource-service'
