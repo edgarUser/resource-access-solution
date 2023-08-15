@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  idp:
+    container_name: identity-provider
+    image: quay.io/keycloak/keycloak:latest
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - 8080:8080
+    command:
+      - start-dev
+    networks:
+      - web-facing
+
+networks:
+  web-facing:
+    name: web-facing
+    driver: bridge
