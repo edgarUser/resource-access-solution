@@ -1,7 +1,6 @@
 package com.mycom.resourceservice.restclient;
 
 import feign.Retryer;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 
 public class AuthServerConfig {
