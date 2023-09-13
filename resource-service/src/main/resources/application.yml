@@ -4,12 +4,13 @@ server:
 spring:
   cloud:
     openfeign:
-      circuitbreaker.enabled: true
+      circuitbreaker:
+        enabled: true               #enabled it delegate to circuitbreaker acts including fallback
       client:
         config:
           default:
-            connectTimeout: 5000 #1 to test retry
-            readTimeout: 5000 #1 to test retry
+            connectTimeout: 10000   #Connection time out in ms (time needed for the TCP handshake)
+            readTimeout: 5000       #Read time out in ms (time needed to read data from the socket)
             loggerLevel: basic
 
 #feign:
