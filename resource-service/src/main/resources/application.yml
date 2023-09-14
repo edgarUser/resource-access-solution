@@ -5,7 +5,9 @@ spring:
   cloud:
     openfeign:
       circuitbreaker:
-        enabled: false               #enabled it delegate to circuitbreaker acts including fallback
+        enabled: true               #enabled it delegate to circuitbreaker acts including fallback
+      alphanumeric-ids:
+        enabled: true
       client:
         config:
           default:
@@ -13,6 +15,15 @@ spring:
             readTimeout: 5000       #Read time out in ms (time needed to read data from the socket)
             loggerLevel: basic
 
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        minimumNumberOfCalls: 69
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 10s
 #feign:
 #  circuitbreaker.enabled: false
 #  cache.enabled: false
