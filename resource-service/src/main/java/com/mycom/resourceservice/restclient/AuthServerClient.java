@@ -1,14 +1,14 @@
 package com.mycom.resourceservice.restclient;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "authServer",
-    url = "http://localhost:8081/", fallbackFactory = AuthServerFallbackFactory.class,
+    url = "http://localhost:8081", fallbackFactory = AuthServerFallbackFactory.class,
     configuration = AuthServerConfig.class)
 public interface AuthServerClient {
 
-  @RequestMapping(method = RequestMethod.GET, value = "/actuator/health")
-  String getDetails();
+  @GetMapping(value = "/eval?requiredResponse={responseCode}&seconds={seconds}")
+  String getDetails(@PathVariable int responseCode, @PathVariable long seconds);
 }

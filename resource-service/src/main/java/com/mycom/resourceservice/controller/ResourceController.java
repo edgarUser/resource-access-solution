@@ -12,7 +12,7 @@ public class ResourceController {
   AuthServerClient authServerClient;
   @GetMapping("/")
   public String greeting(){
-    return authServerClient.getDetails();
+    return authServerClient.getDetails(200, 1);
   }
 
 }

@@ -5,7 +5,7 @@ import org.springframework.cloud.client.circuitbreaker.NoFallbackAvailableExcept
 public class FallbackWithFactory implements AuthServerClient{
 
   @Override
-  public String getDetails() {
+  public String getDetails(int responseCode, long seconds) {
     throw new NoFallbackAvailableException("Boom!", new RuntimeException());
   }
 }
