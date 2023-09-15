@@ -17,6 +17,7 @@ public class EvalController {
     TimeUnit.SECONDS.sleep(seconds);
 
     return switch (requiredResponse) {
+      case 204 -> new ResponseEntity<>("No content", HttpStatus.NO_CONTENT);
       case 400 -> new ResponseEntity<>("Bad request", HttpStatus.BAD_REQUEST);
       case 409 -> new ResponseEntity<>("Conflict", HttpStatus.CONFLICT);
       case 500 -> new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);

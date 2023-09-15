@@ -10,7 +10,6 @@ public class AuthServerFallbackFactory implements FallbackFactory<FallbackWithFa
 
   @Override
   public FallbackWithFactory create(Throwable cause) {
-    log.info("Cause : {}", cause.getMessage());
-    return new FallbackWithFactory();
+    return new FallbackWithFactory(cause);
   }
 }
