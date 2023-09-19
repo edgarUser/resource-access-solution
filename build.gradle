@@ -1,5 +1,18 @@
+plugins {
+    id 'checkstyle'
+}
+
 subprojects {
+
+    apply plugin: 'checkstyle'
+
     repositories {
 	    mavenCentral()
     }
+}
+
+checkstyle {
+    configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
+    maxWarnings = 0
+    ignoreFailures = false
 }

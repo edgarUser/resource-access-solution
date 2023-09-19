@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ResourceController {
+    @Autowired
+    AuthServerClient authServerClient;
 
-  @Autowired
-  AuthServerClient authServerClient;
-  @GetMapping("/greeting")
-  public String greeting(@RequestParam int requiredResponse, @RequestParam long seconds){
-    return authServerClient.getDetails(requiredResponse, seconds);
-  }
+    @GetMapping("/greeting")
+    public String greeting(@RequestParam int requiredResponse, @RequestParam long seconds) {
+        return authServerClient.getDetails(requiredResponse, seconds);
+    }
 
 }
