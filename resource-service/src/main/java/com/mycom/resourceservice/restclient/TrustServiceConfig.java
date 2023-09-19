@@ -3,12 +3,12 @@ package com.mycom.resourceservice.restclient;
 import feign.Retryer;
 import org.springframework.context.annotation.Bean;
 
-public class AuthServerConfig {
+public class TrustServiceConfig {
 
-  @Bean
-  Retryer retryer() {
+    @Bean
+    Retryer retryer() {
 
-    return new Retryer.Default(500, 500, 5);
-  }
+        return new Retryer.Default(500, 500, 5);
+    }
 
 }

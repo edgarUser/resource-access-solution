@@ -30,7 +30,7 @@ resilience4j:
         ignoreExceptions:
           - feign.FeignException.FeignClientException #Client Exceptions (4xx) should not trip the circuit except 429
     instances:
-      authServerCircuitBreaker:
+      trustServiceCircuitBreaker:
         baseConfig: default
   timelimiter:
     configs:
@@ -40,4 +40,4 @@ resilience4j:
 logging:
   level:
     root: INFO
-    com.mycom.resourceservice.restclient.AuthServerClient: DEBUG
+    com.mycom.resourceservice.restclient.TrustServiceClient: DEBUG
