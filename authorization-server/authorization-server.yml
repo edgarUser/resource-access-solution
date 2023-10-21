@@ -12,6 +12,18 @@ services:
       - start-dev
     networks:
       - web-facing
+  opa:
+    container_name: open-policy-agent
+    image: openpolicyagent/opa:latest
+    ports:
+      - 8181:8181
+    command:
+      - "run"
+      - "--server"
+      - "--log-format=json-pretty"
+      - "--set=decision_logs.console=true"
+    networks:
+      - web-facing
 
 networks:
   web-facing:

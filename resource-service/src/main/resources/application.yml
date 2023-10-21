@@ -47,4 +47,4 @@ application:
     introspect:
       uri: http://localhost:8080/realms/americas/protocol/openid-connect/token/introspect
       clientId: resource-service
-      clientSecret: secret
+      clientSecret: nDPARXfUKgv5igrg9VZkiWJuM8jMbbdF
